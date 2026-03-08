@@ -9,9 +9,9 @@ resource "aws_vpc" "devops_vpc" {
     Name = "devops-blueprint-vpc"
   }
 }
-  resource "aws_subnet" "public_subnet" {
-  vpc_id = aws_vpc.devops_vpc.id
-  cidr_block = "10.0.1.0/24"
+resource "aws_subnet" "public_subnet" {
+  vpc_id                  = aws_vpc.devops_vpc.id
+  cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true
 
   tags = {
@@ -41,6 +41,6 @@ resource "aws_route_table" "public_rt" {
 }
 
 resource "aws_route_table_association" "public_assoc" {
-  subnet_id = aws_subnet.public_subnet.id
+  subnet_id      = aws_subnet.public_subnet.id
   route_table_id = aws_route_table.public_rt.id
 }
