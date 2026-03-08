@@ -1,48 +1,68 @@
-# Terraform AWS DevOps Blueprint
+# AWS VPC Infrastructure with Terraform
 
-This project demonstrates how to provision AWS infrastructure using Terraform as Infrastructure-as-Code.
+In this project I practiced building AWS networking infrastructure using Terraform instead of manually creating resources in the AWS console.
 
-The goal of this project was to practice building cloud infrastructure programmatically instead of manually through the AWS console.
+The goal was to understand how Infrastructure as Code works and how Terraform manages cloud resources.
 
-## What this project does
+## What this project creates
 
-- Configures the AWS provider using Terraform
-- Creates an AWS VPC using a CIDR block
-- Uses Infrastructure-as-Code to manage cloud resources
-- Demonstrates the Terraform workflow:
-  - terraform init
-  - terraform plan
-  - terraform apply
-  - terraform destroy
+The Terraform configuration provisions a small AWS networking setup that includes:
 
-## Tech Stack
+- A custom VPC
+- A public subnet
+- An Internet Gateway
+- A route table
+- Route table association for internet access
+
+This setup represents the basic networking structure many AWS environments start with.
+
+## Tools used
 
 - Terraform
-- AWS (VPC)
-- AWS CLI
+- AWS
 - Git
 - GitHub
 
-## Project Files
+## Terraform workflow used
 
-`main.tf`  
-Contains the Terraform configuration for creating the AWS VPC.
+I used the standard Terraform lifecycle while working on this project:
 
-`.gitignore`  
-Prevents Terraform state files from being pushed to GitHub.
+Initialize Terraform
 
-`.terraform.lock.hcl`  
-Locks the Terraform provider version for consistent deployments.
+```bash
+terraform init
+```
 
-## Key Learning
+Review infrastructure plan
+
+```bash
+terraform plan
+```
+
+Deploy infrastructure
+
+```bash
+terraform apply
+```
+
+Destroy infrastructure after testing
+
+```bash
+terraform destroy
+```
+
+## What I learned
 
 While working on this project I practiced:
 
-- configuring AWS CLI credentials
-- provisioning infrastructure using Terraform
-- managing infrastructure lifecycle (create → update → destroy)
-- following best practices by excluding Terraform state files from Git
+- Writing Terraform configuration files
+- Provisioning AWS infrastructure using code
+- Understanding Terraform planning and state
+- Managing infrastructure changes using Git and GitHub
+
+This project helped me better understand how DevOps teams manage cloud infrastructure using Infrastructure as Code.
 
 ## Result
 
 Successfully created and destroyed AWS VPC infrastructure using Terraform.
+
